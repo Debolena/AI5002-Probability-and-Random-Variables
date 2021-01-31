@@ -1,6 +1,0 @@
-print("Enter the dimensions of the total rectangular area:")
-a,b= map(float, input().split())
-print("Enter the dimensions of the lake")
-x,y= map(float,input().split())
-prob= (x*y)/(a*b)
-print("The probability that the helicopter has crashed inside the lake is= ", prob)

@@ -2,36 +2,15 @@ import numpy as np
 import random
 from matplotlib import pyplot as plt
 
-
-
 p=[0.1, 0.15, 0.30, 0.30, 0.15] #according to given pmf
 num_trials = 100000
 
 cdfp=[0.0,0.0,0.0,0.0,0.0,0.0]
 cdfp=np.cumsum(p)  # Cummulative distribution of pmf given
-print(cdfp)
+#print(cdfp)
 
 samples= np.zeros(num_trials)
 count0 = count1 = count2 = count3 = count4 = 0
-'''
-for i in range(0, num_trials):
-    x= random.randint(0,100)
-    if (x<10):
-        samples[i] = 0
-        count0 += 1
-    elif (x>=11) and (x<=25):
-        samples[i] = 1
-        count1 += 1
-    elif (x>=26) and (x<= 55):
-        samples[i] = 2
-        count2 += 1
-    elif (x>= 56) and (x<=85):
-        samples[i] = 3
-        count3 += 1
-    else:
-        samples[i] = 4
-        count4 += 1
-'''
 
 for i in range(num_trials):
       U=np.random.rand() #random number between 0 and 1

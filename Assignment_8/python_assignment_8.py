@@ -40,39 +40,31 @@ print("sum of the simulated probabilities = ", sum(p_simulated) )
 print("favourable outcomes generated for studying 0,1,2,3,4 hours are: ", count0, count1, count2, count3, count4, "respectively")
 print("sum of these counts= ", count0+count1+count2+count3+count4, "= total number of trials")
 
+
+#actual vs simulated probability plot
 plt.plot(p,p_simulated,marker="o",color="red")
 plt.xlabel("Actual probability")
 plt.ylabel("probability after simulation of random variables")
 plt.title("simulation versus actual probabilities")
 plt.show()
 
-#plotting pmf for theory
+#plotting pmf 
 x=[0,1,2,3,4]
-plt.title("plot of PMF (theoritical)")
+plt.title("plot of PMF")
 plt.xlabel('x')
 plt.ylabel('P(X=x)')
-plt.bar(x, p)
+plt.stem(x, p, markerfmt= 'o', label='theoritical')
+plt.stem(x, p_simulated, markerfmt ='.', label='simulation')
+plt.legend()
 plt.show()
 
-#plotting pmf for simulation
-plt.title("plot of PMF (simulation)")
-plt.xlabel('x')
-plt.ylabel('P(X=x)')
-plt.bar(x, p_simulated)
-plt.show()
-
-#for plotting the cdf theoritical
-plt.bar(x, cdfp)
-plt.title('cdf plot (theoritical)')
-plt.xlabel('x')
-plt.ylabel('cdf')
-plt.show()
-
-#for plotting the cdf in simulation
+#for plotting the cdf
 cdf_p_simulated =np.cumsum(p_simulated)
 print("the cdf (simulated):\n ", cdf_p_simulated)
-plt.bar(x, cdf_p_simulated)
-plt.title('cdf plot (simulation)')
+plt.stem(x, cdfp, markerfmt='o', label='theoritical')
+plt.stem(x, cdf_p_simulated, markerfmt='.', label='simulation')
+plt.title('CDF plot')
 plt.xlabel('x')
 plt.ylabel('cdf')
+plt.legend()
 plt.show()

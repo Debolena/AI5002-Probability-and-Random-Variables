@@ -7,7 +7,7 @@ num_trials = 100000
 
 cdfp=[0.0,0.0,0.0,0.0,0.0,0.0]
 cdfp=np.cumsum(p)  # Cummulative distribution of pmf given
-#print(cdfp)
+print("the cdf (theoritical) is:\n", cdfp)
 
 samples= np.zeros(num_trials)
 count0 = count1 = count2 = count3 = count4 = 0
@@ -46,3 +46,33 @@ plt.ylabel("probability after simulation of random variables")
 plt.title("simulation versus actual probabilities")
 plt.show()
 
+#plotting pmf for theory
+x=[0,1,2,3,4]
+plt.title("plot of PMF (theoritical)")
+plt.xlabel('x')
+plt.ylabel('P(X=x)')
+plt.bar(x, p)
+plt.show()
+
+#plotting pmf for simulation
+plt.title("plot of PMF (simulation)")
+plt.xlabel('x')
+plt.ylabel('P(X=x)')
+plt.bar(x, p_simulated)
+plt.show()
+
+#for plotting the cdf theoritical
+plt.bar(x, cdfp)
+plt.title('cdf plot (theoritical)')
+plt.xlabel('x')
+plt.ylabel('cdf')
+plt.show()
+
+#for plotting the cdf in simulation
+cdf_p_simulated =np.cumsum(p_simulated)
+print("the cdf (simulated):\n ", cdf_p_simulated)
+plt.bar(x, cdf_p_simulated)
+plt.title('cdf plot (simulation)')
+plt.xlabel('x')
+plt.ylabel('cdf')
+plt.show()

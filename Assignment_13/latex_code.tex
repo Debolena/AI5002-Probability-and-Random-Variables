@@ -185,15 +185,30 @@ Using \eqref{eq: a} and \eqref{eq: b} in \eqref{fx},
     \end{cases}
 \end{align}
 \begin{align}
-    \therefore Pr\brak{X<0.5} &= \int_0^{0.5} f\brak x dx\\ 
-    &= \int_0^{0.5} 2x \; dx\\
-    & = 2\sbrak{\frac{x^2}{2}}_0^{0.5} = \brak{0.5}^2\\
+    F_X\brak x &= Pr\brak{X <x}\\
+    &=\int_{-\infty}^{x} f\brak t dt\\
+    &= \int_0^x 2t \; dt\\
+    &= 2\sbrak{\frac{t^2}{2}}_0^x\\
+    &= x^2, 0<x<1
+\end{align}
+Thus, the CDF is:
+\begin{align}
+    F_X\brak x =
+    \begin{cases}
+    0, \quad x\le 0\\
+    x^2,\quad 0<x<1\\
+    1, \quad x\ge 1
+    \end{cases}
+\end{align}
+\begin{align}
+    \therefore Pr\brak{X<0.5} &= F_X\brak{0.5}\\ 
+    &= \brak{0.5}^2\\
     &= 0.25
 \end{align}
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=\columnwidth]{pdf plot.png}
-\caption{Beta Distribution Plot}
-\label{fig:Beta Plot}
+\caption{PDF Plot}
+\label{fig:PDF Plot}
 \end{figure}
 \end{document}

@@ -157,16 +157,16 @@ The CDF is:
 \begin{align}
     F_X\brak x =
     \begin{cases}
-    0, \quad x\le -1\\[1em]
+    0, \quad x < -1\\[1em]
     \int_{-1}^x 0.2 dt,\quad |x|\le 1\\[1em]
     \int_{-1}^{1} 0.2 dt + \int_1^x 0.1 dt, \quad 1\le |x| \le 4\\[1em]
     1,\quad x>4
     \end{cases}
     \\=
     \begin{cases}
-    0, \quad x\le -1\\
+    0, \quad x < -1\\
     0.2\brak{x+1},\quad |x|\le 1\\
-    0.4 + 0.1\brak{x-1} dt, \quad 1\le |x| \le 4\\
+    0.4 + 0.1\brak{x-1}, \quad 1\le |x| \le 4\\
     1,\quad x>4
     \end{cases}
 \end{align}
@@ -174,19 +174,9 @@ The CDF is:
     &Pr\brak{0.5 < X < 5}\\
     &= Pr\brak{0.5 < X < 4}\\
     &\sbrak{\because f\brak x = 0\text{ for}\ x \in \brak{4,5}}\\
-    &= Pr\brak{X < 4}- Pr\brak{X \le 0.5}\\
     &= F_X\brak{4} - F_X\brak{0.5}\\
     &= \sbrak{0.4+ 0.1\brak{4-1}}- \sbrak{0.2\brak{0.5+1}}\\
-    &=0.7-0.3\\
     &=0.4
-\end{align}
-Alternatively,
-\begin{align}
-    &Pr\brak{0.5 < X < 5}\\
-    &= \int_{0.5}^1 f\brak x dx +\int_1^4 f\brak x dx + \int_4^5 f\brak x dx\\
-    &= \int_{0.5}^1 0.2 dx +\int_1^4 0.1 dx + \int_4^5 0 dx\\
-    &= 0.2\times 0.5 + 0.1\times 3 + 0\\
-    &= 0.4
 \end{align}
 \begin{figure}[!ht]
 \centering

@@ -6,17 +6,17 @@ num_samples= 10000
 a=-1
 b=4
 x_arr = np.random.uniform(a,b, num_samples)  #generating random samples from Uniform(a,b)
-pdf_arr=[]
+#pdf_arr=[]
 cdf_arr=[]
 
 #constructing the pdf and cdf array
 for i in range(0, num_samples):
     if x_arr[i]<= 1:              
-        pdf_arr.append(0.2)
+        #pdf_arr.append(0.2)
         cdf = 0.2*(x_arr[i]+1)
         cdf_arr.append(cdf)             
     if x_arr[i]<=4 and x_arr[i]>1:
-        pdf_arr.append(0.1)
+        #pdf_arr.append(0.1)
         cdf= 0.4 + 0.1*(x_arr[i]-1)
         cdf_arr.append(cdf)
    

@@ -38,7 +38,7 @@ cdf_final= cdf_start + cdf_arr         #forming the complete cdf array for plott
 
 
 #plotting cdf
-plt.scatter(new_x2, cdf_final, s=0.1) #marker='.', color='g')
+plt.scatter(new_x2, cdf_final, s=0.1)
 plt.title("CDF plot F(x)")
 plt.xlabel("x")
 plt.ylabel('CDF: F(x)')
